@@ -4,8 +4,8 @@ import { of, throwError } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Platform } from '@angular/cdk/platform';
-import { MockService } from './mock.service';
 import { Router } from '@angular/router';
+import { MockService } from '../app/mock.service';
 
 const delayTime = (time) => new Promise((resolve) => setTimeout(resolve, time));
 const getDimensions = () => {
@@ -32,10 +32,9 @@ const modalConstants = {
 @Component({
   selector: 'app-video',
   templateUrl: './video.component.html',
-  styleUrls: ['./video.component.scss']
+  styleUrls: ['./video.component.scss'],
 })
 export class VideoComponent implements OnInit {
-
   @ViewChild('inputFile', { static: false }) inputFile: ElementRef;
   @ViewChild('video', { static: false }) videoElementRef!: ElementRef;
   recorder: any;
@@ -267,5 +266,4 @@ export class VideoComponent implements OnInit {
     );
     return modalConstants[key].instruction;
   }
-
 }
