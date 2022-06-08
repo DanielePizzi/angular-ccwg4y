@@ -146,7 +146,7 @@ export class VideoComponent implements OnInit {
     //dialogConfig.data = { name: 'errorDocModalC' };
     //this.matDialog.open(PopUpErrorAccountComponent, dialogConfig);
     let count = 4;
-    alert('Chiamata Video');
+    alert(video);
     this.mockService
       .faceMatch(this.deviceType, '', this.key, video.split(';base64,')[1])
       .pipe(
